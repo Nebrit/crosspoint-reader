@@ -12,7 +12,7 @@
  * Implementado como tema independiente para evitar regresiones.
  */
 class LyraGraphicalTheme : public LyraTheme {
-public:
+ public:
   // Menú Home: renderizado en grid (tiles)
   void drawButtonMenu(
       GfxRenderer& renderer,
@@ -33,7 +33,7 @@ public:
       bool& bufferRestored,
       std::function<bool()> storeCoverBuffer) const override;
 
-private:
+ private:
   static std::string basename(const std::string& path);
   static std::string fileExtLower(const std::string& path);
 };
