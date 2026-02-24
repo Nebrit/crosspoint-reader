@@ -9,8 +9,8 @@
 #include "RecentBooksStore.h"
 #include "components/themes/BaseTheme.h"
 #include "components/themes/lyra/Lyra3CoversTheme.h"
-#include "components/themes/lyra/LyraTheme.h"
 #include "components/themes/lyra/LyraGraphicalTheme.h"
+#include "components/themes/lyra/LyraTheme.h"
 #include "util/StringUtils.h"
 
 namespace {
