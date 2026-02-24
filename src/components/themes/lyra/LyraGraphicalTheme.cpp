@@ -41,23 +41,36 @@ constexpr int CARD_PADDING = 12;
 const uint8_t* iconForName(UIIcon icon, int size) {
   if (size == 24) {
     switch (icon) {
-      case UIIcon::Folder: return Folder24Icon;
-      case UIIcon::Text:   return Text24Icon;
-      case UIIcon::Image:  return Image24Icon;
-      case UIIcon::Book:   return Book24Icon;
-      case UIIcon::File:   return File24Icon;
+      case UIIcon::Folder: 
+        return Folder24Icon;
+      case UIIcon::Text:   
+        return Text24Icon;
+      case UIIcon::Image:  
+        return Image24Icon;
+      case UIIcon::Book:   
+        return Book24Icon;
+      case UIIcon::File:   
+        return File24Icon;
       default: return nullptr;
     }
   } else if (size == 32) {
     switch (icon) {
-      case UIIcon::Folder:   return FolderIcon;
-      case UIIcon::Book:     return BookIcon;
-      case UIIcon::Recent:   return RecentIcon;
-      case UIIcon::Settings: return Settings2Icon;
-      case UIIcon::Transfer: return TransferIcon;
-      case UIIcon::Library:  return LibraryIcon;
-      case UIIcon::Wifi:     return WifiIcon;
-      case UIIcon::Hotspot:  return HotspotIcon;
+      case UIIcon::Folder:   
+        return FolderIcon;
+      case UIIcon::Book:     
+        return BookIcon;
+      case UIIcon::Recent:   
+        return RecentIcon;
+      case UIIcon::Settings: 
+        return Settings2Icon;
+      case UIIcon::Transfer: 
+        return TransferIcon;
+      case UIIcon::Library:  
+        return LibraryIcon;
+      case UIIcon::Wifi:     
+        return WifiIcon;
+      case UIIcon::Hotspot:  
+        return HotspotIcon;
       default: return nullptr;
     }
   }
@@ -65,12 +78,11 @@ const uint8_t* iconForName(UIIcon icon, int size) {
 }
 
 std::string toLower(std::string s) {
-  std::transform(s.begin(), s.end(), s.begin(),
-                 [](unsigned char c) { return static_cast<char>(std::tolower(c)); });
+  std::transform(s.begin(), s.end(), s.begin(), [](unsigned char c) { return static_cast<char>(std::tolower(c)); });
   return s;
 }
 
-} // namespace
+}  // namespace
 
 std::string LyraGraphicalTheme::basename(const std::string& path) {
   auto pos = path.find_last_of('/');
@@ -124,11 +136,7 @@ void LyraGraphicalTheme::drawButtonMenu(
     const std::string label = buttonLabel ? buttonLabel(i) : "";
     const int tw = renderer.getTextWidth(UI_12_FONT_ID, label.c_str(), EpdFontFamily::REGULAR);
 
-    renderer.drawText(UI_12_FONT_ID,
-                      x + (tileW - tw) / 2,
-                      y + CARD_PADDING + ICON_SIZE + 8,
-                      label.c_str(),
-                      true);
+    renderer.drawText(UI_12_FONT_ID, x + (tileW - tw) / 2, y + CARD_PADDING + ICON_SIZE + 8, label.c_str(), true);
   }
 }
 
@@ -162,12 +170,7 @@ void LyraGraphicalTheme::drawRecentBookCover(
   renderer.drawText(UI_10_FONT_ID, x + 12, y + 8, tr(STR_CONTINUE_READING), true);
 
   if (recentBooks.empty()) {
-    renderer.drawText(UI_12_FONT_ID,
-                      x + 12,
-                      y + h / 2,
-                      tr(STR_NO_OPEN_BOOK),
-                      true,
-                      EpdFontFamily::BOLD);
+    renderer.drawText(UI_12_FONT_ID, x + 12, y + h / 2, tr(STR_NO_OPEN_BOOK), true, EpdFontFamily::BOLD);
     return;
   }
 
