@@ -15,13 +15,13 @@ class LyraGraphicalTheme : public LyraTheme {
  public:
   // Menú Home: renderizado en grid (tiles)
   void drawButtonMenu(GfxRenderer& renderer, Rect rect, int buttonCount, int selectedIndex,
-                    const std::function<std::string(int)>& buttonLabel,
-                    const std::function<UIIcon(int)>& rowIcon) const override;
+                      const std::function<std::string(int)>& buttonLabel,
+                      const std::function<UIIcon(int)>& rowIcon) const override;
 
   // Libro activo: card con portada + resumen
- void drawRecentBookCover(GfxRenderer& renderer, Rect rect, const std::vector<RecentBook>& recentBooks,
-                         const int selectorIndex, bool& coverRendered, bool& coverBufferStored, bool& bufferRestored,
-                         std::function<bool()> storeCoverBuffer) const override;
+  void drawRecentBookCover(GfxRenderer& renderer, Rect rect, const std::vector<RecentBook>& recentBooks,
+                           const int selectorIndex, bool& coverRendered, bool& coverBufferStored, bool& bufferRestored,
+                           std::function<bool()> storeCoverBuffer) const override;
 
  private:
   static std::string basename(const std::string& path);
