@@ -56,9 +56,9 @@ const uint8_t* iconForName(UIIcon icon, int size) {
     }
   } else if (size == 32) {
     switch (icon) {
-      case UIIcon::Folder:  
+      case UIIcon::Folder: 
         return FolderIcon;
-      case UIIcon::Book: 
+      case UIIcon::Book:
         return BookIcon;
       case UIIcon::Recent:
         return RecentIcon;
@@ -68,7 +68,7 @@ const uint8_t* iconForName(UIIcon icon, int size) {
         return TransferIcon;
       case UIIcon::Library:
         return LibraryIcon;
-      case UIIcon::Wifi:   
+      case UIIcon::Wifi:
         return WifiIcon;
       case UIIcon::Hotspot:
         return HotspotIcon;
