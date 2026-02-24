@@ -41,38 +41,39 @@ constexpr int CARD_PADDING = 12;
 const uint8_t* iconForName(UIIcon icon, int size) {
   if (size == 24) {
     switch (icon) {
-      case UIIcon::Folder: 
+      case UIIcon::Folder:
         return Folder24Icon;
-      case UIIcon::Text:   
+      case UIIcon::Text:
         return Text24Icon;
-      case UIIcon::Image:  
+      case UIIcon::Image:
         return Image24Icon;
-      case UIIcon::Book:   
+      case UIIcon::Book:
         return Book24Icon;
-      case UIIcon::File:   
+      case UIIcon::File:
         return File24Icon;
-      default: 
+      default:
         return nullptr;
     }
   } else if (size == 32) {
     switch (icon) {
-      case UIIcon::Folder:   
+      case UIIcon::Folder:  
         return FolderIcon;
-      case UIIcon::Book:     
+      case UIIcon::Book: 
         return BookIcon;
-      case UIIcon::Recent:   
+      case UIIcon::Recent:
         return RecentIcon;
-      case UIIcon::Settings: 
+      case UIIcon::Settings:
         return Settings2Icon;
-      case UIIcon::Transfer: 
+      case UIIcon::Transfer:
         return TransferIcon;
-      case UIIcon::Library:  
+      case UIIcon::Library:
         return LibraryIcon;
-      case UIIcon::Wifi:     
+      case UIIcon::Wifi:   
         return WifiIcon;
-      case UIIcon::Hotspot:  
+      case UIIcon::Hotspot:
         return HotspotIcon;
-      default: return nullptr;
+      default:
+        return nullptr;
     }
   }
   return nullptr;
@@ -95,7 +96,6 @@ std::string LyraGraphicalTheme::fileExtLower(const std::string& path) {
   if (pos == std::string::npos) return {};
   return toLower(path.substr(pos + 1));
 }
-
 void LyraGraphicalTheme::drawButtonMenu(GfxRenderer& renderer, Rect rect, int buttonCount, int selectedIndex,
                                         const std::function<std::string(int)>& buttonLabel,
                                         const std::function<UIIcon(int)>& rowIcon) const {
@@ -136,7 +136,6 @@ void LyraGraphicalTheme::drawButtonMenu(GfxRenderer& renderer, Rect rect, int bu
     renderer.drawText(UI_12_FONT_ID, x + (tileW - tw) / 2, y + CARD_PADDING + ICON_SIZE + 8, label.c_str(), true);
   }
 }
-
 void LyraGraphicalTheme::drawRecentBookCover(GfxRenderer& renderer, Rect rect,
                                              const std::vector<RecentBook>& recentBooks, const int selectorIndex,
                                              bool& coverRendered, bool& coverBufferStored, bool& bufferRestored,
