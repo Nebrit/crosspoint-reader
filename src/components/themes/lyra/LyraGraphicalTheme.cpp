@@ -56,7 +56,7 @@ const uint8_t* iconForName(UIIcon icon, int size) {
     }
   } else if (size == 32) {
     switch (icon) {
-      case UIIcon::Folder: 
+      case UIIcon::Folder:
         return FolderIcon;
       case UIIcon::Book:
         return BookIcon;
@@ -99,7 +99,6 @@ std::string LyraGraphicalTheme::fileExtLower(const std::string& path) {
 void LyraGraphicalTheme::drawButtonMenu(GfxRenderer& renderer, Rect rect, int buttonCount, int selectedIndex,
                                         const std::function<std::string(int)>& buttonLabel,
                                         const std::function<UIIcon(int)>& rowIcon) const {
-
   const int sidePad = LyraMetrics::values.contentSidePadding;
   const int x0 = rect.x + sidePad;
   const int w0 = rect.width - sidePad * 2;
@@ -140,7 +139,6 @@ void LyraGraphicalTheme::drawRecentBookCover(GfxRenderer& renderer, Rect rect,
                                              const std::vector<RecentBook>& recentBooks, const int selectorIndex,
                                              bool& coverRendered, bool& coverBufferStored, bool& bufferRestored,
                                              std::function<bool()> storeCoverBuffer) const {
-
   (void)bufferRestored;
 
   const int sidePad = LyraMetrics::values.contentSidePadding;
@@ -212,15 +210,13 @@ void LyraGraphicalTheme::drawRecentBookCover(GfxRenderer& renderer, Rect rect,
   const int textW = x + w - textX - 12;
 
   // Title (bold, trunc)
-  const std::string t =
-      renderer.truncatedText(UI_12_FONT_ID, book.title.c_str(), textW, EpdFontFamily::BOLD);
+  const std::string t = renderer.truncatedText(UI_12_FONT_ID, book.title.c_str(), textW, EpdFontFamily::BOLD);
   renderer.drawText(UI_12_FONT_ID, textX, textY, t.c_str(), true, EpdFontFamily::BOLD);
   textY += renderer.getLineHeight(UI_12_FONT_ID) + 4;
 
   // Author (regular)
   if (!book.author.empty()) {
-    const std::string a =
-        renderer.truncatedText(UI_10_FONT_ID, book.author.c_str(), textW, EpdFontFamily::REGULAR);
+    const std::string a = renderer.truncatedText(UI_10_FONT_ID, book.author.c_str(), textW, EpdFontFamily::REGULAR);
     renderer.drawText(UI_10_FONT_ID, textX, textY, a.c_str(), true);
     textY += renderer.getLineHeight(UI_10_FONT_ID) + 6;
   }
